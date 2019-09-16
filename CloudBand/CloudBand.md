@@ -1,5 +1,7 @@
 # nfvSummary
 ## 1. CBND
+        Imagine that orchestration. (TED)	
+        그 모든 것을 한데 어우러지게 만드는 과정을 말입니다. 
 ### 1.1. CBND란?
         CloudBand Network Director,
         NFV Orchestrator,
@@ -8,10 +10,9 @@
         CBND는 VNF, Network Service 그리고 그에 상응하는 
         Virtual Netwrok 자원의 라이프사이클 관리를 자동화 한다.
 
-        Nokia CBND는 TESI NFV MANO에서 사전 정의 한 
+        Nokia CBND는 ETSI NFV MANO에서 사전 정의 한 
         NFV Orchestrator의 모든 기능을 담고있다.
 ### 1.3.CBND가 제공하는 기능
-        • ETSI-based NFV Orchestration engine,
         • Resource Orchestration (RO) function,
           Network Service Orchestration (NSO) function
         • Data center service chain Orchestration (SDN)
@@ -19,15 +20,14 @@
         • NSD Model: TOSCA
         • Support for multiple VNFMs (VNFM-G, VNFM-S)
         • Support for multiple VIMs
-        • Resource management, inventory, deployed Network Services, and VNFs
         • Network Service topology, monitoring and records
         • NS root cause analysis and alerts
 	    • RESTful open interfaces for efficient multi-vendor Telco cloud management
-        
+         
 ## 2. CBAM        
 ### 2.1. CBAM이란? 
         CloudBand Application Manager,
-        ETSI phase2를 따르는 generic VNF Manager (VNFM-G)의 기능 수행
+        ETSI phase2를 따르는 generic VNF Manager (VNFM-G)
 ### 2.2. CBAM의 역할 
         standards-based API를 통한 VIM, NFVO와 상호작용
         VNF instance의 라이프 사이클 관리
@@ -36,13 +36,14 @@
         (healing, patching, backup and restore)
 ### 2.3. CBAM이 제공하는 기능
         • VNF Operation automates
-        • VNF scales 
+        • VNF scales in/out
         • VIM Resource monitors
         • Ready to use
+
+
 ## 3. CBIS
 ### 3.1. CBIS란?
-        CloudBand Infrastructure Software,
-        
+        CloudBand Infrastructure Software,        
 
 ### 3.2. CBIS의 역할
         VNF를 활성화 하고 실행하기 위해서 컴퓨트, 스토리지 네트워크 자원들을 가상화 하고 관리하는 역할을 한다.
@@ -59,7 +60,8 @@
             • Controller nodes
             • Compute Nodes
             • Storage Nodes or External Storage
-        Undercloud Server는 CBIS 클러스터에서 따로 독립된 서버에서 운영되며 CBIS 클러스터의 라이프 사이클을 관리한다.
+        Undercloud Server는 CBIS 클러스터에서 따로 독립된 서버에서 운영되며 
+        CBIS 클러스터의 라이프 사이클을 관리한다.
         
         Undercloud는 크게 두 가지로 구성된다.
             • Undercloud Server
@@ -76,7 +78,7 @@
                 CBIS 클러스터를 관리하는 소프트웨어를 실행한다.
                 CBIS노드들은 보통 3개의 관리용 서버로 구성된다.(HA 요구사항에 의해)
                 Controller node의 핵심적인 역할은 인프라를 관리하는 OPENSTACK controller를 호스팅 하는 역할이다.
-                OPENSTACK 컨트롤러들은 Active-Active 모드로 운영되고 scalability와 HA때문에 로드 밸런싱을 사용한다.                 
+                OPENSTACK 컨트롤러들은 Active-Active 모드로 운영되고 scalability와 HA때문에 로드 밸런싱을 사용한다.
             • Compute Node
                 Compute node들은 가상화 된 요소들이 운영되는 실질적인 플랫폼이다. 이 자원들은 OPENSTACK에 의해 관리된다.
                 각 컴퓨트 노드는 가상화된 인프라의 하이퍼바이저로써 Linux KVM을, 네트워킹을 위한 Virtual Switch로써 OVS를 운용합니다. 
@@ -111,7 +113,7 @@
                 Virtual Machines 배포, 관리
                 오픈스택 컴퓨트로도 알려진 nova는 IaaS(Infrastructure as a service) 클라우드 컴퓨팅 플랫폼을 제어한다.
                 Nova는 Virtual Macines의 네트워크를 대비하고 관리함으로서 컴퓨트 자원에 대한 on-demand access를 제공한다.
-                Amazon의 EC2, Rackspace의 Clud Servers와 유사한 형태로.
+                Amazon의 EC2, Rackspace의 Cloud Servers와 유사한 형태로.
                 Nova 자체는 어떠한 가상화 소프트웨어도 포함하지 않고 있다. 다만 Web API를 통해 host OS위에서 돌아가는 underlying virtualization mechanism을 제공하고 기능을 드러낸다.(?)
             • swift
                 오픈스택 스토리지 서비스 중 하나. swift-proxy, account, container, object로 구성되며 account, container는 db로 데이터가 관리되고 Object는 저장공간에 직접 저장되는 방식으로 되어있다. swift-proxy는 오픈스택의 object API를 제공한다 사용자는 이 object API를 통해 데이터를 save or load 할 수 있다. 
