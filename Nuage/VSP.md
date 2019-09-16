@@ -4,6 +4,7 @@
 ### 1.1.1. VSP
     Virtual Services Platform (VSP)
 ### 1.1.2. VSD
+    ![VSD](https://github.com/thecheet0ss/Nuage/irnages/vsd.png)
     Virtual Services Directory (VSD)
     Directory의 사전적 의미와 VSD에서의 의미
     - 관리서버
@@ -62,32 +63,29 @@
 ## 1.6. Nuage Host Interface 구성
 
 ## 2.1. VSD Functional Components
-    VSD Functional Components
-
-    RESTful API
+### 2.1.1. RESTful API
         - VSD의 Northbound Interface이며 API Call을 통해 타 시스템과 연동. ComputeManagement Systemc(CMS) Plugin
         - LGU+는 NSO를 통해 VSD와 RESTfull API 연동
-    Statistics Engine
+### 2.1.2. Statistics Engine
         - VRS, VSC, VM의 성능 정보를 수집 및 제공
         - Elasticsearch Cluster와 연동되어 수집 Data 저장
-    User Management DB
+### 2.1.3. User Management DB
         - Multi-tenant 환경을 위한 User 게층 정보 저장.
         - Enterprise, Group, User 계층 및 User 및 Group 별 역할 구분
-    Policy Management Engine
+### 2.1.4. Policy Management Engine
         - Nuage VSD의 Core Function으로 가상 네트워크 환경을 제어하기 위한 Service Building Block을 구성
         - Domain, Zone, Subnet, vPort로 구성되는 계층화된 Building Block
-    Domain
+### 2.1.5. Domain
         - A logical distributed router that enables L2 & L3 communication.
-    Zone
+### 2.1.6. Zone
         - A set of network endpoints that must adhere to the same security policies.
-    Subnet
+### 2.1.7. Subnet
         - A layer 2 segment that allows communication between VMs
-    Policies
+### 2.1.8. Policies
         - Security, QoS, Statistics, Access Control.
-
-    VSD TCA (Threshold Crossing Alerts) / Analytics Engine
+### 2.1.9. VSD TCA (Threshold Crossing Alerts) / Analytics Engine
         - Elasticsearch 내 VRS의 모든 통계 저장 후 TCA의 임계치 설정에 의해 알람을 발생
-    VSD Mediator 
+### 2.1.10. VSD Mediator 
         - VSC와 통신하는 Southbound Interface. VSD의 Policy 정보를 VSC에 전달
         - Uses XMPP 
 
