@@ -1,11 +1,12 @@
 # VSP
-
+![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.png)
+![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.jpg)
 ## 1.1. Nuage VSP Architecture
 ### 1.1.1. VSP
     Virtual Services Platform (VSP)
 ### 1.1.2. VSD
-    ![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.png)
-    ![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.jpg)
+![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.png)
+![VSD](github.com/thecheet0ss/nfvSummary/blob/master/Nuage/irnages/vsd.jpg)
     Virtual Services Directory (VSD)
     Directory의 사전적 의미와 VSD에서의 의미
     - 관리서버
