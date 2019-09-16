@@ -114,14 +114,24 @@
                 Amazon의 EC2, Rackspace의 Clud Servers와 유사한 형태로.
                 Nova 자체는 어떠한 가상화 소프트웨어도 포함하지 않고 있다. 다만 Web API를 통해 host OS위에서 돌아가는 underlying virtualization mechanism을 제공하고 기능을 드러낸다.(?)
             • swift
+                오픈스택 스토리지 서비스 중 하나. swift-proxy, account, container, object로 구성되며 account, container는 db로 데이터가 관리되고 Object는 저장공간에 직접 저장되는 방식으로 되어있다. swift-proxy는 오픈스택의 object API를 제공한다 사용자는 이 object API를 통해 데이터를 save or load 할 수 있다. 
             • cinder
+                오픈스택 스토리지 서비스 중 하나. 스위프트와 달리 블럭 스토리지로 블럭 스토리지 장치를 guest instance에 제공하는 역할을 한다. 한 마디로 vm에 영구적인 스토리지를 제공한다고 할 수 있다. cinder는 cinder-API cinder-Volume cinder-scheduler daemon cinder-backup daemon message queue로 구성된다
             • neutron
+                사용자가 정의한 네트워크와 부착물에 대한 API를 제공한다. 많은 유명한 네트워킹 벤더와 기술들을 지원하기 위한 플러그인 아키텍쳐를 가진다.
+                Nuage가 뉴트론의 플러그인들 중 하나이다.
             • horizon
+                인스턴스를 작동하고, IP주소를 할당, 접속제어 구성과 같은 오픈스택 서비스와 상호 작용하는 웹 기반 셀프 서비스 포털을 제공한다. 한 마디로. GUI
             • keystone
+                다른 오픈스택 서비스에 대한 인증과 권한 부여 서비스를 제공한다. 모든 오픈스택 서비스에 대한 endpoint의 카탈로그를 제공한다.
             • glance
+                가상 머신 디스크 이미지를 저장하고 검색한다. 오픈스택 컴퓨트는 인스턴스를 제공하는 동안 만들어 사용한다.
             • ceilometer 
+                오픈스택 클라우드 사용량을 측정한다.
             • aodh
+                telemetry alarming service 원격측정 알람 서비스. 수집된 수치값 혹은 정의된 규칙이 깨졌다는 이벤트를 받았을 떄 알람을 울려준다.
             • heat
+                오픈스택 오케스트레이션 서비스. 오픈스택은 오케스트레이션에 HOT(Heat Orchestration Template)을 사용한다.
         
         Controller Nodes
             • Pacemaker
@@ -198,9 +208,10 @@
                 API library, daemon, CLI tool로 구성된다.
 
         Availability zones
+            컴퓨트 노드들 간의 논리적인 그룹으로 사용 목적에 맞게 구분하여 사용이 가능하게 해준다.
 
         compute node performance optimization
-
+            
             SR-IOV
             OVS DPDK
             Huge Pages
