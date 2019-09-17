@@ -9,31 +9,40 @@ Nuage VSP는 기존 DC IP Network 위에 배포될 수 있는 소프트웨어 �
 ## 1.1.2. VSD
 ![VSD](irnages/vsd.png)
 
-
-
-Nuage VSD는 `프로그래밍 가능 한` 정책 엔진이면서 `프로그래밍 가능 한` 통계 엔진으로 
-IT 관리자로 하여금 사용자 친화적인 측면에서 자원 정책을 수립하고 적용할 수 있는 유연하고 계층적인 network policy framework다.
-Virtual Services Directory (VSD)
-Directory의 사전적 의미와 VSD에서의 의미
-- 관리서버
+Virtual Services Directory
 - 네트워크 정책 엔진 - 네트워크/보안 등 추상화
+
+        Nuage VSD는 `프로그래밍 가능 한` 정책 엔진이면서 `프로그래밍 가능 한` 통계 엔진으로 IT 관리자로 하여금 사용자 친화적인 측면에서 자원 정책을 수립하고 적용할 수 있는 유연하고 계층적인 network policy framework다.
+
+- 관리서버
+
+        VSD는 역할 기반의 멀티 테넌트 서비스 디렉토리를 포함하며 IP나 ACL과 같은 네트워크 자원을 관리한다.
+
 - 서비스 템플릿 및 분석
 
 ## 1.1.3. VSC
 ![VSC](irnages/vsc.png)
 
-Virtualzed Services Controller (VSC)
+Virtualzed Services Controller
+
 - SDN Controller
-- VRS, link with ToR switch and Openflow
-- VSC, link with PE and MP-BGP(SROS)
+- VRS, ToR switch와 Openflow 연동 
+- VSC, PE와 MP-BGP 연동 (SR OS)
+
+        업계 최강의 SDN 컨트롤러. DataCenter의 네트워크 제어부의 역할을 하며 각 테넌트 별 전체적인 네트워크와 서비스 토폴로지를 관리한다. VSD와 XMPP로 통신한다. OpenFlow 프로토콜을 사용하여 네트워크 전달부 인 Nuage VRS를 프로그래밍하기 위해서 VSC를 통해 virtual routing and switching 구조가 설정된다. VSC는 Alcatel-Lucent Service Router Operating System을 기반으로 하며 VM 환경 안에서 작동한다.
+
 
 ## 1.1.4. VRS
 ![VRS](irnages/vrs.png)
 
-Virtual Routing & Switching (VRS)
+Virtual Routing & Switching
+
 - Distrivuted Switch/Router(L2 ~ L4 rule)
 - VRS-G (software VxLAN Gateway)
 - 7850VSG (Hardware VxLAN Gateway)
+
+        Nuage VRS 컴포넌트는 네트워크 포워딩 플레인을 구성하는 Enhanced Open vSwitch를 구현 한 것. 유저 트래픽을 인캡슐레이션 / 디캡슐레이션 하며 VSD가 정의한 트래픽 정책에 따라 L2-L4 역할을 한다.  
+
 
 ## 1.1.5. Neutron Plugin
 Neutron service와 플러그인 형태로 연동
